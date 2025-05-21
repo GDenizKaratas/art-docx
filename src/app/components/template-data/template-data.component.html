@@ -1,0 +1,16 @@
+<div class="template-data-container">
+  <h2>2. JSON Veri Girişi</h2>
+
+  <textarea
+    [(ngModel)]="jsonInput"
+    (input)="onInputChange()"
+    rows="15"
+    placeholder="Buraya JSON verinizi yazın..."
+  ></textarea>
+
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!errorMessage && jsonInput" class="success">Geçerli JSON!</div>
+</div>

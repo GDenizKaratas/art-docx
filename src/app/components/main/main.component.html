@@ -1,0 +1,21 @@
+<div class="main-container">
+  <h1>Docx Template Engine 🚀</h1>
+
+  <!-- Template Upload -->
+  <app-upload-template
+    (templateUploaded)="onTemplateUploaded($event)"
+  ></app-upload-template>
+
+  <!-- JSON Data Input -->
+  <app-template-data (jsonValid)="onJsonValid($event)"></app-template-data>
+
+  <!-- Generate Button -->
+  <div class="generate-container">
+    <button
+      (click)="onGenerateDocx()"
+      [disabled]="!uploadedTemplateFile || !jsonData"
+    >
+      Generate DOCX
+    </button>
+  </div>
+</div>

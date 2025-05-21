@@ -1,0 +1,18 @@
+<div class="upload-container">
+  <h2>1. Docx Template Yükle</h2>
+
+  <input type="file" (change)="onFileSelected($event)" accept=".docx" />
+
+  <div *ngIf="fileName" class="file-info">
+    <p><strong>Yüklenen Dosya:</strong> {{ fileName }}</p>
+  </div>
+
+  <div *ngIf="placeholders.length > 0" class="placeholders-list">
+    <h3>Bulunan Placeholderlar:</h3>
+    <ul>
+      <li *ngFor="let p of placeholders">
+        <strong>{{ p.type.toUpperCase() }}</strong> - {{ p.key }}
+      </li>
+    </ul>
+  </div>
+</div>

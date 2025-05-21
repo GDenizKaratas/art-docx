@@ -1,0 +1,18 @@
+<div class="p-4 space-y-4 bg-white rounded-xl shadow max-w-md mx-auto">
+  <h2 class="text-lg font-semibold">Word Belgesi Oluştur</h2>
+
+  <input
+    type="file"
+    accept=".docx"
+    (change)="onFileSelected($event)"
+    class="block w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+  />
+
+  <button
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
+    [disabled]="!selectedFile"
+    (click)="generateDocument(selectedFile)"
+  >
+    Belgeyi Oluştur
+  </button>
+</div>
